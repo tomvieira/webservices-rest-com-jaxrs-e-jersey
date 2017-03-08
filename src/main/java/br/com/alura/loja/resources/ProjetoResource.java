@@ -3,6 +3,7 @@ package br.com.alura.loja.resources;
 import br.com.alura.loja.dao.CarrinhoDAO;
 import br.com.alura.loja.dao.ProjetoDAO;
 import br.com.alura.loja.modelo.Carrinho;
+import br.com.alura.loja.modelo.Produto;
 import br.com.alura.loja.modelo.Projeto;
 import com.thoughtworks.xstream.XStream;
 import java.net.URI;
@@ -10,9 +11,11 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -46,5 +49,5 @@ public class ProjetoResource {
     public Response removeProjeto(@PathParam("id") long id){
         new ProjetoDAO().remove(id);        
         return Response.ok().build();
-    }
+    }  
 }
